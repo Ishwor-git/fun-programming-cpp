@@ -1,0 +1,39 @@
+# Compiled files
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.sh
+
+# Executables
+bin/
+out/
+
+# Object files
+obj/
+*.obj
+
+# Build files
+build/
+CMakeFiles/
+Makefile
+CMakeCache.txt
+
+# IDE files and directories
+.vscode/
+.idea/
+
+# Dependency directories
+vendor/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
