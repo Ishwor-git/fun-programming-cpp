@@ -1,4 +1,7 @@
 # Compiled files
+*
+!*/
+!*.*
 *.o
 *.out
 *.exe
@@ -37,3 +40,6 @@ vendor/
 # Windows
 Thumbs.db
 Desktop.ini
+
+#test env
+test/
