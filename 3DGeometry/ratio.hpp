@@ -5,7 +5,7 @@ using namespace std;
 
 class Ratio2
 {
-protected:
+private:
     float m1, m2;
 
 public:
@@ -17,7 +17,7 @@ public:
 };
 class Ratio3
 {
-protected:
+private:
     float a, b, c;
 
 public:
