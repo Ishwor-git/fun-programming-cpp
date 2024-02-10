@@ -2,7 +2,6 @@
 #define POSITION_HPP
 #include <iostream>
 #include <cmath>
-using namespace std;
 class Position
 {
 protected:
@@ -10,7 +9,7 @@ public:
     float x, y, z;
     Position(void);
     Position(float, float, float);
-    friend ostream &operator<<(ostream &, Position &);
+    friend std::ostream &operator<<(std::ostream &, Position &);
     friend float distance(Position &, Position &);
     friend bool isColinear(Position &, Position &, Position &);
 };
@@ -18,7 +17,7 @@ Position::Position() : x(0), y(0), z(0) {}
 
 Position::Position(float x, float y, float z) : x(x), y(y), z(z) {}
 
-ostream &operator<<(ostream &out, Position &p)
+std::ostream &operator<<(std::ostream &out, Position &p)
 {
     out << "( " << p.x << ", " << p.y << ", " << p.z << " )";
     return out;
@@ -33,9 +32,9 @@ float distance(Position &p1, Position &p2)
 
 bool isColinear(Position &p1, Position &p2, Position &p3)
 {
-    if ((p1.x == 0 && p1.y == 0) || (p1.y == 0 && p1.z == 0) || (p1.z == 0 && p1.x == 0) ||
-        (p2.x == 0 && p2.y == 0) || (p2.y == 0 && p2.z == 0) || (p2.z == 0 && p2.x == 0) ||
-        (p3.x == 0 && p3.y == 0) || (p3.y == 0 && p3.z == 0) || (p3.z == 0 && p3.x == 0))
+    if (((p1.x == 0 && p1.y == 0) || (p1.y == 0 && p1.z == 0) || (p1.z == 0 && p1.x == 0)) &&
+        ((p2.x == 0 && p2.y == 0) || (p2.y == 0 && p2.z == 0) || (p2.z == 0 && p2.x == 0)) &&
+        ((p3.x == 0 && p3.y == 0) || (p3.y == 0 && p3.z == 0) || (p3.z == 0 && p3.x == 0)))
     {
         return true;
     }
@@ -47,9 +46,6 @@ bool isColinear(Position &p1, Position &p2, Position &p3)
     {
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 #endif // POSITION_HPP
